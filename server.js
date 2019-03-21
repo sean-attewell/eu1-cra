@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+console.log(app);
 
 // the way CRA works is that when webpack runs it creates a build folder
 // which contains the index.html and the bundle.js
@@ -13,7 +14,7 @@ const pathToIndexHtml = path.join(__dirname, 'build', 'index.html');
 const pathToBuildFolder = path.join(__dirname, 'build');
 
 // allow static assets to be served off of this folder (build)!!
-app.use(exporess.static(pathToBuildFolder));
+app.use(express.static(pathToBuildFolder));
 
 
 //sendFile need absolute path to asset
